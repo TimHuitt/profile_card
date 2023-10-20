@@ -1,0 +1,176 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica;
+    background-color: #065455;
+    user-select: none;
+}
+main {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+p {
+    margin: 0;
+}
+.card-switch { 
+    padding: 20px;
+    margin: 20px;
+    background: #555;
+}
+
+.card-container {
+    height: 500px;
+    width: 300px;
+    background: #fff;
+}
+.card-container.switch {
+    height: 300px;
+    width: 550px;
+}
+
+.status {
+    position: relative;
+    height: 10px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: lighter;
+    text-align: right;
+    transition: all 1s;
+}
+.status.switch {
+    text-align: left;
+}
+
+.image-contact-container {
+    display: relative;
+    height: 100%;
+}
+.profile-image-container {
+    width: 150px;
+    height: 30%;
+    justify-content: center;
+    transform: translateX(50%);
+}
+.contact-container {
+    /* flex */
+    display: flex;
+    width: 100%;
+    margin-top: 260px;
+}
+
+
+.profile-image-container.switch {
+    margin: 40px;
+    background: grey;
+}
+.profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #000;
+    border: 5px solid rgb(130, 206, 143);
+    border-radius: 100%;
+    overflow: hidden;
+}
+.profile-image img {
+    width: 150px;
+}
+.details {
+    position: relative;
+    top: -64%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: none;
+}
+.profile-name {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+.title-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 85px;
+    background: rgb(243, 243, 243);
+    text-align: center;
+}
+.profile-name {
+}
+.stars {
+    height: 35px;
+}
+.stars img {
+    width: 100px;
+}
+.title {
+    font-size: 18px;
+    font-weight: lighter;
+}
+.description-container {
+    width: 100%;
+    
+}
+.description {
+    display: none;
+    padding: 10px;
+}
+
+.rates-container {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+.rates-container p:first-child {
+    font-size: 20px;
+    font-weight: bold;
+}
+.rates-container p:last-child {
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+
+.contact-phone {
+    display: flex;
+    width: 50%;
+    padding: 10px 0;
+    background: rgb(130, 206, 143);
+    justify-content: center;
+}
+
+.contact-message {
+    display: flex;
+    width: 50%;
+    padding: 10px 0;
+    background: rgb(116, 186, 129);
+    align-items: center;
+    justify-content: center;
+}
+.contact-phone img,
+.contact-message img {
+    height: 50px;
+    filter: invert();
+}
+
+.darken:hover {
+    filter: brightness(.75)
+}
+.darken:active {
+    filter: brightness(.5)
+}
