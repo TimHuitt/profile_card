@@ -1,211 +1,230 @@
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Helvetica;
-    background-color: #065455;
-    user-select: none;
-}
-main {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-p {
-    margin: 0;
-}
-.card-switch { 
-    padding: 20px;
-    margin: 20px;
-    background: #555;
-}
-
-.card-container {
-    height: 500px;
-    width: 300px;
-    background: #fff;
-    transition: all 1s;
-}
-.card-container.switch {
-    display: flex;
-    height: 300px;
-    width: 600px;
-}
-
-.status {
+:root {
+    --background: #065455;
+    --grey: rgb(91, 89, 100);
+  }
+  
+  * {
+      box-sizing: border-box;
+  }
+  
+  body {
+      margin: 0;
+      font-family: Helvetica;
+      background-color: var(--background);
+      user-select: none;
+  }
+  main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+  }
+  p {
+      margin: 0;
+  }
+  
+  .card-container {
     position: relative;
-    height: 10px;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: lighter;
-    text-align: right;
-    transition: all 1s;
-}
-.status.switch {
-    text-align: left;
-}
-
-.image-contact-container {
-    display: relative;
-    height: 100%;
-    transition: all 1s;
-}
-.image-contact-container.switch {
-    width: 40%;
-}
-.profile-image-container {
-    width: 150px;
-    height: 30%;
-    justify-content: center;
-    transform: translateX(50%);
-    transition: all 1s;
-}
-.profile-image-container.switch {
-    transform: translateX(0);
-    margin: 20px 40px 40px;
-}
-.contact-container {
-    /* flex */
-    display: flex;
-    width: 100%;
-    margin-top: 260px;
-    transition: all 1s;
-}
-.contact-container.switch {
-    margin-top: 100px;
-}
-
-.profile-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background: #000;
-    border: 5px solid rgb(91, 89, 100);
-    border-radius: 100%;
-    overflow: hidden;
-}
-.profile-image img {
-    width: 150px;
-}
-.details {
-    position: relative;
-    bottom: 64%;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    flex-direction: column;
-    pointer-events: none;
-}
-.details.switch {
-    bottom: 0;
-    width: 60%;
-    padding: 30px 20px 20px 30px;
-    background: rgb(233, 233, 246);
-}
-.profile-name {
-    display: flex;
-    width: 100%;
-    height: 10%;
-    font-size: 20px;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-}
-.profile-name.switch {
-    justify-content: flex-start;
-    font-size: 26px;
-}
-.title-container {
+      height: 500px;
+      width: 300px;
+      background: #fff;
+      transition: all .5s;
+  }
+  .card-container.switch {
+      display: flex;
+      height: 300px;
+      width: 600px;
+  }
+  
+  .card-switch {
+    position: absolute;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    width: 100%;
-    height: 85px;
-    background: rgb(233, 233, 246);
-    text-align: center;
-}
-.title-container.switch {
-    text-align: left;
-    background: transparent;
-}
-.stars {
-    height: 35px;
-}
-.stars img {
-    width: 100px;
-}
-.title {
-    padding: 5px;
-    font-size: 18px;
-    font-weight: lighter;
-}
-.description-container {
-    display: none;
-    width: 100%;
     
-}
-.description-container.switch {
-    display: flex;
-    background: rgb(91, 89, 100);
-    justify-content: flex-end;
-}
-.description {
-    padding: 10px;
-    width: 98%;
-    background: rgb(243, 243, 243);
-}
-.description.switch {
-    background: rgb(243, 243, 243);
-}
-.rates-container {
-    padding-top: 30px;
-    text-align: center;
-    font-size: 18px;
-}
-.rates-container.switch {
-    width: 100%;
-    text-align: left;
-}
-.rates-container p:first-child {
-    font-size: 20px;
-    font-weight: bold;
-}
-.rates-container p:last-child {
-    font-size: 18px;
-    font-weight: lighter;
-}
-
-.contact-phone {
-    display: flex;
-    width: 50%;
-    padding: 10px 0;
-    background: rgb(91, 89, 100);
-    justify-content: center;
-}
-
-.contact-message {
-    display: flex;
-    width: 50%;
-    padding: 10px 0;
-    background: rgb(78, 76, 87);
-    align-items: center;
-    justify-content: center;
-}
-.contact-phone img,
-.contact-message img {
-    height: 50px;
-    filter: invert();
-}
-
-.darken:hover {
-    filter: brightness(.75)
-}
-.darken:active {
-    filter: brightness(.5)
-}
+    width: 35px;
+    height: 20px;
+    margin: 10px;
+    background: #eee;
+    transition: width 2s, height 2s;
+  }
+  .card-switch div {
+    margin: 2px;
+    background: #ccc;
+  }
+  .card-switch.switch {
+    right: 0;
+    width: 20px;
+    height: 35px;
+    z-index: 2;
+  }
+  .status {
+      position: relative;
+      height: 10px;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: lighter;
+      text-align: right;
+  }
+  .status.switch {
+      text-align: left;
+  }
+  
+  .image-contact-container {
+      display: relative;
+      height: 100%;
+      transition: all .5s;
+  }
+  .image-contact-container.switch {
+      width: 40%;
+  }
+  .profile-image-container {
+      width: 150px;
+      height: 30%;
+      justify-content: center;
+      transform: translateX(50%);
+      transition: all .5s;
+  }
+  .profile-image-container.switch {
+      transform: translateX(0);
+      margin: 20px 40px 40px;
+  }
+  .contact-container {
+      /* flex */
+      display: flex;
+      width: 100%;
+      margin-top: 260px;
+      transition: all .5s;
+  }
+  .contact-container.switch {
+      margin-top: 100px;
+  }
+  
+  .profile-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background: #000;
+      border: 5px solid var(--grey);
+      border-radius: 100%;
+      overflow: hidden;
+  }
+  .profile-image img {
+      width: 150px;
+  }
+  .details {
+      position: relative;
+      bottom: 64%;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      flex-direction: column;
+      pointer-events: none;
+  }
+  .details.switch {
+      bottom: 0;
+      width: 60%;
+      padding: 30px 20px 20px 30px;
+      background: rgb(233, 233, 246);
+  }
+  .profile-name {
+      display: flex;
+      width: 100%;
+      height: 10%;
+      font-size: 20px;
+      font-weight: bold;
+      justify-content: center;
+      align-items: center;
+  }
+  .profile-name.switch {
+      justify-content: flex-start;
+      font-size: 26px;
+  }
+  .title-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      width: 100%;
+      height: 85px;
+      background: rgb(233, 233, 246);
+      text-align: center;
+  }
+  .title-container.switch {
+      text-align: left;
+      background: transparent;
+  }
+  .stars {
+      height: 35px;
+  }
+  .stars img {
+      width: 100px;
+  }
+  .title {
+      padding: 5px;
+      font-size: 18px;
+      font-weight: lighter;
+  }
+  .description-container {
+      display: none;
+      width: 100%;
+      
+  }
+  .description-container.switch {
+      display: flex;
+      background: var(--grey);
+      justify-content: flex-end;
+  }
+  .description {
+      padding: 10px;
+      width: 98%;
+      background: rgb(233, 233, 246);
+  }
+  .rates-container {
+      padding-top: 30px;
+      text-align: center;
+      font-size: 18px;
+  }
+  .rates-container.switch {
+      width: 100%;
+      text-align: left;
+  }
+  .rates-container p:first-child {
+      font-size: 20px;
+      font-weight: bold;
+  }
+  .rates-container p:last-child {
+      font-size: 18px;
+      font-weight: lighter;
+  }
+  
+  
+  .contact-phone {
+      display: flex;
+      width: 50%;
+      padding: 10px 0;
+      background: var(--grey);
+      justify-content: center;
+  }
+  
+  .contact-message {
+      display: flex;
+      width: 50%;
+      padding: 10px 0;
+      background: var(--grey);
+      align-items: center;
+      justify-content: center;
+  }
+  .contact-phone img,
+  .contact-message img {
+      height: 50px;
+      filter: invert();
+  }
+  
+  .darken:hover {
+      filter: brightness(.75)
+  }
+  .darken:active {
+      filter: brightness(.5)
+  }
