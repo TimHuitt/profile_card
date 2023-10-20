@@ -86,7 +86,7 @@ p {
     align-items: center;
     width: 100%;
     background: #000;
-    border: 5px solid rgb(130, 206, 143);
+    border: 5px solid rgb(91, 89, 100);
     border-radius: 100%;
     overflow: hidden;
 }
@@ -106,7 +106,7 @@ p {
     bottom: 0;
     width: 60%;
     padding: 30px 20px 20px 30px;
-    background: rgb(243, 243, 243);
+    background: rgb(233, 233, 246);
 }
 .profile-name {
     display: flex;
@@ -127,7 +127,7 @@ p {
     grid-template-rows: 1fr 1fr;
     width: 100%;
     height: 85px;
-    background: rgb(243, 243, 243);
+    background: rgb(233, 233, 246);
     text-align: center;
 }
 .title-container.switch {
@@ -152,7 +152,7 @@ p {
 }
 .description-container.switch {
     display: flex;
-    background: rgb(116, 186, 129);
+    background: rgb(91, 89, 100);
     justify-content: flex-end;
 }
 .description {
@@ -186,7 +186,7 @@ p {
     display: flex;
     width: 50%;
     padding: 10px 0;
-    background: rgb(130, 206, 143);
+    background: rgb(91, 89, 100);
     justify-content: center;
 }
 
@@ -194,7 +194,7 @@ p {
     display: flex;
     width: 50%;
     padding: 10px 0;
-    background: rgb(116, 186, 129);
+    background: rgb(78, 76, 87);
     align-items: center;
     justify-content: center;
 }
